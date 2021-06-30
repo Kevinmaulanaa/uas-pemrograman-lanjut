@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ISMYNR
+ * @author Kevinmsan
  */
 //ini adalah class queue yang extends ke kelas utama(kelas induk pada java swing)
 public class queue extends javax.swing.JFrame {

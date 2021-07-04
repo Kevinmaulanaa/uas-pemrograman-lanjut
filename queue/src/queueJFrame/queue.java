@@ -125,34 +125,66 @@ public class queue extends javax.swing.JFrame {
             //jika bernilai kosong/null/empty maka akan menampilkan prompt berikut ini dapat digunakan
             //karena telah mengimport java swing di awal
             JOptionPane.showMessageDialog(this, "Silahkan ambil antrian terlebih dahulu");
-        }
-        //disini terdapat sebuah variable txtAntrian yang bernilai kosong karena 
-        //dalam antrian harus dalam bernilai kosong sebelum di inputkan nilai untuk pertama kali tentunya
-        txtAntrian.setText("");
-        //pada nilai antrian berikut maka digunakan method/fungsi bawaan queue itu sendiri
-        //yakni poll untuk mengatur banyaknya thread/antrian yang dibuat sehingga dapat mengeksekusi 
-        //hingga task/queue antrian yang paling akhir
-        antrian.poll();
-        //selanjutnya antrian tadi yang sudah di isi/berisi tadi akan dilakukan looping dengan menggunakan forEach loop
-        //maka semakin banyak antrian maka akan terjadi looping sebanyak data yang masuk diawal
-        antrian.forEach((Object element) -> {
-            //pada proses ini akan melooping nilai yang ada di dalam forEach itu sendiri
-            //dan pada proses ini akan menambhakan data yang secara otomatis sebanyak nilai antrian/queue yang 
-            //dimasukkan, ini masih menggunakan class Buffer untuk menambhakan data dengan keyword append
-            txtAntrian.append("" + element + "\n");
-        });
-        //disini masih terdapat pengecekan apakah antrian tersebut masih kosong dengan method bawaan queue itu
-        //yakni empty jika masih kosong
-        if(antrian.isEmpty()){
-            //maka data akan menampilkan hal berikut
-            lbPanggilAntrian.setText("-----");
+            //kode ini untuk menghentikan program dan jendela java termasuk eksekusi kode dan GUI platform
+            System.out.println(0);
+
         }else{
+         //disini terdapat sebuah variable txtAntrian yang bernilai kosong karena 
+
+        //dalam antrian harus dalam bernilai kosong sebelum di inputkan nilai untuk pertama kali tentunya
+
+        txtAntrian.setText("");
+
+        //pada nilai antrian berikut maka digunakan method/fungsi bawaan queue itu sendiri
+
+        //yakni poll untuk mengatur banyaknya thread/antrian yang dibuat sehingga dapat mengeksekusi 
+
+        //hingga task/queue antrian yang paling akhir
+
+        antrian.poll();
+
+        //selanjutnya antrian tadi yang sudah di isi/berisi tadi akan dilakukan looping dengan menggunakan forEach loop
+
+        //maka semakin banyak antrian maka akan terjadi looping sebanyak data yang masuk diawal
+
+        antrian.forEach((Object element) -> {
+
+            //pada proses ini akan melooping nilai yang ada di dalam forEach itu sendiri
+
+            //dan pada proses ini akan menambhakan data yang secara otomatis sebanyak nilai antrian/queue yang 
+
+            //dimasukkan, ini masih menggunakan class Buffer untuk menambhakan data dengan keyword append
+
+            txtAntrian.append("" + element + "\n");
+
+        });
+
+        //disini masih terdapat pengecekan apakah antrian tersebut masih kosong dengan method bawaan queue itu
+
+        //yakni empty jika masih kosong
+
+        if(antrian.isEmpty()){
+
+            //maka data akan menampilkan hal berikut
+
+            lbPanggilAntrian.setText("-----");
+
+        }else{
+
             //jika data tidak kosong maka akan menggunakan fungsi peek kembali
+
             //untuk mengecek apakah data yang masuk sudah sesuai dengan sistem queue itu sendiri
+
             //yakni FIFO(First in First Out) 
+
             //Jadi queue itu yang masuk pertama akan keluar yang pertama juga sesuai dengan prinsip antrian
+
             lbPanggilAntrian.setText(""+antrian.peek());
+
         }
+
+        }
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
